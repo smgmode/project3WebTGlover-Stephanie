@@ -15,7 +15,7 @@ header {
 header nav ul li {
 	display: inline-block;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 0.938em;;
+	font-size: 0.938em;
 	font-weight: bold;
   display: flex;
   justify-content: center;
@@ -37,10 +37,10 @@ li:hover {
 }
 
 li:hover a {
-	font-size:.1.0em;
+	font-size: 1.0em;
 	color:#FFFFFF;
-	-webkit-transform: rotate (360deg);
-	-ms-transform: rotate (360deg);
+	-webkit-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
 	transform: rotate(360deg);
 	-webkit-transition: all 200ms Linear;
 	-ms-transition: all 200ms Linear;
@@ -60,7 +60,27 @@ li:hover a {
 
 .home-ocean img {
   max-width:100%;
-  animation: fadein 2s;
+}
+
+#photo1 img {
+  animation-name: photo1FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-direction: alternate;
+}
+
+#photo1 img:nth-of-type(1){
+  animation-delay: 6s;
+}
+#photo1 img:nth-of-type(2){
+  animation-delay: 4s;
+}
+#photo1 img:nth-of-type(3){
+  animation-delay: 2s;
+}
+#photo1 img:nth-of-type(4){
+  animation-delay: 0s;
 }
 
 .summary {
@@ -75,8 +95,14 @@ li:hover a {
 }
 
 .summary p {
-  font-size: .25em;
   font-family: 'Montserrat', sans-serif;
+  font-size: .25em;
+}
+
+.summary div p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .25em;
+  padding-top: 50px;
 }
 
 .summary img {
@@ -94,19 +120,23 @@ li:hover a {
 	text-align: center;
 }
 
+.hill-house-section p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .25em;
+}
+
 .hill-house img {
   display: flex;
   animation: fadein 2s;
 }
 
-.stationwagon {
-  animation: -webkit-animation:mymove 5s infinite;
-  animation: mymove 5s infinite;
+.hill-house-section div {
+  padding-top: 25px;
 }
 
-.hill-house-section p {
-  font-size: .25em;
-  font-family: 'Montserrat', sans-serif;
+.stationwagon {
+  -webkit-animation: mymove 5s infinite;
+  animation: mymove 5s infinite;
 }
 
 .red-room {
@@ -126,8 +156,8 @@ li:hover a {
 }
 
 .red-room p {
-  font-size: .25em;
   font-family: 'Montserrat', sans-serif;
+  font-size: .25em;
 }
 
 .ghost {
@@ -142,8 +172,8 @@ li:hover a {
 }
 
 .ghost p {
-  font-size:.25em;
   font-family: 'Montserrat', sans-serif;
+  font-size:.25em;
 }
 
 .ghost img:hover {
@@ -151,8 +181,40 @@ li:hover a {
   animation-iteration-count: infinite;
 }
 
-@media screen (min-width:320px) {
-  body
+footer {
+  background: grey;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen (min-width: 320px) {
+  body, header {
+    display: flex;
+  }
+}
+
+@media (min-width: 320px) {
+  img {
+    max-width: 100%;
+  }
+}
+
+@keyframes photo1FadeInOut {
+	0% {
+		opacity: 1;
+	}
+	17% {
+	     opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
 }
 
 @keyframes fadein {
@@ -173,7 +235,6 @@ li:hover a {
   90%{width:90%;}
   100%{width:100;}
 }
-
 
 @keyframes shake {
   0% { transform:
